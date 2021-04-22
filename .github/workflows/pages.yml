@@ -1,0 +1,30 @@
+name: github pages
+on: push
+jobs:
+  deploy-github:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: playground
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          yarn 
+          yarn run build
+        env:
+          AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Deploy Github
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./out
+      - run: echo "🎉 deploy to github"
+      - name: Deploy Gitee
+        continue-on-error: true
+        if: github.event_name == 'push'
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+        with:
+          source-repo: "git@github.com:Deuscx/css-daily.git"
+          destination-repo: "git@gitee.com:deuscx/css-daily.git"

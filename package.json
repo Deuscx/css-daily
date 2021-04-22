@@ -1,0 +1,13 @@
+{
+  "name": "css-daily",
+  "version": "1.0.0",
+  "description": "CSS Daily Practice",
+  "main": "index.js",
+  "repository": "git@github.com:Deuscx/css-daily.git",
+  "author": "Deuscx <48537979+Deuscx@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
