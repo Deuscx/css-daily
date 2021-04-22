@@ -17,7 +17,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./playground/out
       - run: echo "🎉 deploy to github"
       - name: Deploy Gitee
         continue-on-error: true
