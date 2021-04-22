@@ -1,12 +1,13 @@
 # css-daily
 
+## 在线浏览
 
+- GitHub: https://deuscx.github.io/css-daily/
+- Gitee: https://deuscx.gitee.io/css-daily/
 
 ## 工具
 
 https://www.sassmeister.com/
-
-
 
 ## 参考资源与博客
 
