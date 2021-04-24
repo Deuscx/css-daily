@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+/* Your Code */
+.container.show-nav {
+  transform: rotate(-20deg);
+
+  transition: transform 0.5s ease-in;
+}
+
+.container.show-nav .circle-container {
+  transform: translate3d(-50%, -50%, 0) rotate(-80deg);
+}
+/* ==== Circle ===== */
+.circle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  /* 将button 位于圆中心 */
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 0;
+}
+button > i {
+  font-size: 1.2rem;
+  color: white;
+}
+button:nth-child(1) {
+  transform: rotate(45deg) translateX(60px);
+}
+
+button:nth-child(1) i {
+  transform: rotate(-45deg);
+}
+
+button:nth-child(2) {
+  transform: rotate(135deg) translateX(60px);
+}
+button:nth-child(2) i {
+  transform: rotate(-135deg);
+}
+
+/* === Content ===== */
+
+/* === Nav ===*/
